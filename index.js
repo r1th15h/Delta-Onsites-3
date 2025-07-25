@@ -45,7 +45,6 @@ function generateAndSetTiles() {
 }
 
 let tiles = []; 
-let random = [1,2,3,5,null,6,4,7,8]; 
 let toucing = [[1,3],[0,2,4],[1,5],[0,4,6],[1,3,5,7],[2,4,8],[3,7],[4,6,8],[5,7]];
 
 function generaterandom() {
@@ -78,7 +77,6 @@ class Images{
     constructor(x,y,ind){
         this.x=x;
         this.y=y;
-        this.index = ind;
     }
     draw(val){
         if(val === null) return;
@@ -133,7 +131,7 @@ function drawTiles(){
     c.clearRect(0,0,canvas.width,canvas.height);
     for(let i=0;i<tileind.length;i++){
         const val = tiles[i];
-        tileind[i].draw(val,i);
+        tileind[i].draw(val);
     }
     checkWin();
 }
